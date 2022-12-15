@@ -26,3 +26,4 @@ sudo netstat -an |grep 5000
 --POST THE REQUEST to make routes and index are linked--
 curl -X POST http://localhost:5000/openai/generateimage
 
+--test the image URLs generated in the browser
