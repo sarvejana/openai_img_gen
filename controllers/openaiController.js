@@ -5,8 +5,6 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-
-//create image
 const generateImage = async(req,res) => {
     try { 
         const response = await openai.createImage({
@@ -20,11 +18,6 @@ const generateImage = async(req,res) => {
                 data:imageURL
         })
     } catch (error) {
-        
-        /*res.status(400).json({
-            success: false,
-            error: 'The image could not be generated'
-                    });*/
         if (error.response) {
             console.log(error.response.status);
             console.log(error.response.data);
@@ -34,17 +27,4 @@ const generateImage = async(req,res) => {
     }
 };
 
-
 module.exports = { generateImage }
-
-/*
-const generateImage = async(req,res) => {
-    res.status(200).json({
-        success: true,
-    });
-}
-
-module.exports = { generateImage }
-*/
-
-
